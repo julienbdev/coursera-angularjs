@@ -1,0 +1,16 @@
+<div style="clear:both;">
+  <table class="table table-striped table-condensed">
+    <tbody>
+    <tr ng-repeat="item in items track by $index">
+      <td>{{ item.short_name }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+      <td><button class ="btn btn-warning" ng-click="onRemove({index: $index});">Don't want this one!</button></td>
+    </tr>
+  </tbody>
+  </table>
+
+  <!-- we use === opertor so the message is not displayed if the items list does not exist -->
+  <!-- => the message is displayed only if we click on the narrow it down button -->
+  <div class="error" ng-if="items.length===0">Nothing found</div>
+</div>
