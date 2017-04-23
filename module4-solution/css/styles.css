@@ -1,0 +1,9 @@
+.loading-icon {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+.clickable {
+  cursor: pointer;
+}

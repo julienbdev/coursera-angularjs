@@ -1,0 +1,12 @@
+<div style="clear:both;">
+  <table class="table table-condensed table-hover">
+    <tbody>
+    <tr class="clickable" ui-sref="items({categoryShortName: category.short_name})"
+        ng-repeat="category in $ctrl.categories track by $index">
+      <td>{{ category.short_name }}</td>
+      <td>{{ category.name }}</td>
+      <td>{{ category.special_instructions }}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>

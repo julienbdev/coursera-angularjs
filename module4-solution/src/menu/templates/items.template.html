@@ -1,0 +1,11 @@
+<div style="clear:both;">
+  <table class="table table-condensed table-striped">
+    <tbody>
+    <tr ng-repeat="menuItem in $ctrl.items track by $index">
+      <td>{{ menuItem.short_name }}</td>
+      <td>{{ menuItem.name }}</td>
+      <td>{{ menuItem.description }}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
