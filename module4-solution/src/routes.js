@@ -35,7 +35,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   .state('items', {
     url: '/items/{categoryShortName}',
     templateUrl: 'src/menu/templates/main-items.template.html',
-    controller: "MainMenuItemsController as menuItemsCtrl",
+    controller: "MainItemsController as itemsCtrl",
     resolve: {
       menuItems: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
         return MenuDataService.getItemsForCategory($stateParams.categoryShortName);

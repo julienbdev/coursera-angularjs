@@ -2,11 +2,11 @@
 'use strict';
 
 angular.module('MenuApp')
-.controller('MainMenuItemsController', MainMenuItemsController);
+.controller('MainItemsController', MainItemsController);
 
 // menuItems come from resolve property in RoutesConfig
-MainMenuItemsController.$inject = ['menuItems'];
-function MainMenuItemsController(menuItems) {
+MainItemsController.$inject = ['menuItems'];
+function MainItemsController(menuItems) {
   var controller = this;
   controller.items = menuItems;
 }

@@ -1,6 +1,8 @@
 (function () {
 'use strict';
 
+// MenuDataService is in data module
+// => data module is only responsible for getting datas
 angular.module('data')
 .service('MenuDataService', MenuDataService)
 .constant('ApiRestaurantUrl', "https://davids-restaurant.herokuapp.com/")
