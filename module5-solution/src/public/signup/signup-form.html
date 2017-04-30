@@ -1,0 +1,85 @@
+<div class="row col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+      <form name='signUpForm' novalidate>
+
+        <div class="form-group">
+          <label class="control-label" for="signupFirstName">First name</label>
+          <input  id="signupFirstName" name="signupFirstName" type="text" ng-model="$ctrl.signupFirstName"
+                  required ng-maxlength="50" class="form-control">
+          <span class="simpleError"
+            ng-if="signUpForm.signupFirstName.$error.required && signUpForm.signupFirstName.$touched">
+            First name is mandatory
+          </span>
+          <span class="simpleError"
+            ng-if="signUpForm.signupFirstName.$error.maxlength && signUpForm.signupFirstName.$touched">
+            First name must not be longer than 50 characters
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="signupLastName">Last name</label>
+          <input  id="signupLastName" name="signupLastName" type="text" ng-model="$ctrl.signupLastName"
+                  required ng-maxlength="50" class="form-control">
+          <span class="simpleError"
+            ng-if="signUpForm.signupLastName.$error.required && signUpForm.signupLastName.$touched">
+            Last name is mandatory
+          </span>
+          <span class="simpleError"
+            ng-if="signUpForm.signupLastName.$error.maxlength && signUpForm.signupLastName.$touched">
+            Last name must not be longer than 50 characters
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="signupEmail">Email address</label>
+          <input  id="signupEmail" name="signupEmail" type="email" ng-model="$ctrl.email"
+                  required class="form-control">
+          <span class="simpleError"
+            ng-if="signUpForm.signupEmail.$error.required && signUpForm.signupEmail.$touched">
+            Email is mandatory
+          </span>
+          <span class="simpleError"
+            ng-if="signUpForm.signupEmail.$invalid && signUpForm.signupEmail.$touched && !signUpForm.signupEmail.$error.required">
+            Must be a valid email address: handle@domain format
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="signupPhone">Phone number</label>
+          <input  id="signupPhone" name="signupPhone" type="text" ng-model="$ctrl.signupPhone"
+                  placeholder="###-###-####" pattern="(\d{3})-(\d{3})-(\d{4})"
+                  required class="form-control">
+          <span class="simpleError"
+            ng-if="signUpForm.signupPhone.$error.required && signUpForm.signupPhone.$touched">
+            Phone number is mandatory
+          </span>
+          <span class="simpleError"
+            ng-if="signUpForm.signupPhone.$invalid && signUpForm.signupPhone.$touched && !signUpForm.signupPhone.$error.required">
+            Phone must be in the format ###-###-####
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="signupFavorite">Favorite dish</label>
+          <input  id="signupFavorite" name="signupFavorite" type="text" ng-model="$ctrl.signupFavorite"
+                  required  class="form-control">
+          <span class="simpleError"
+            ng-if="signUpForm.signupFavorite.$error.required && signUpForm.signupFavorite.$touched">
+            Favorite dish is mandatory
+          </span>
+          <span class="simpleError" ng-if="$ctrl.errorFavorite">
+            No such menu number exists.
+          </span>
+        </div>
+
+        <div class="form-group">
+          <button ng-disabled="signUpForm.$invalid"
+                  ng-click="$ctrl.submit()"class="btn btn-info btn-block">
+            Sign Up
+          </button>
+        </div>
+      </form>
+
+      <div ng-if="$ctrl.completed">
+        Your information has been saved.
+      </div>
+</div>
